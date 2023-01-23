@@ -42,4 +42,12 @@ const productDetails = (firstProduct, secondProduct) => [
   },
 ];
 
+// console.log(productDetails('banana', 'kitkat'));
+// console.log(productDetails('banana', 'kitkat').length);
+
+// const product = productDetails('banana', 'kitkat');
+// console.log(product.length);
+// console.log(typeof product[0]);
+// console.log(product[0]['details']['productId']);
+
 module.exports = productDetails;
