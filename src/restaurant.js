@@ -59,14 +59,31 @@ const createMenu = (obj) => {
       const containDrink = drinks.some((contain) => contain === string);
       // console.log(containDrink);
       if (containFood === true || containDrink === true) {
-            meuRestaurante.consumption.push(string);
-    return meuRestaurante.consumption;
-    } 
+        meuRestaurante.consumption.push(string);
+        return meuRestaurante.consumption;
+      }
       return 'Item indisponível';
-  },
-};
-return meuRestaurante;
-};
+    },
+    pay: () => {
+      let total = 0;
+      let sumOrder = 0;
+  // console.log(meuRestaurante.consumption);
+  for (let index = 0; index < meuRestaurante.consumption.length; index += 1) {
+  // console.log(meuRestaurante['consumption'][index]);
+  //   console.log(meuRestaurante.fetchMenu().food[meuRestaurante['consumption'][index]]);
+  //  console.log(meuRestaurante.fetchMenu().drinks[meuRestaurante['consumption'][index]]);
+     if (meuRestaurante.fetchMenu().food[meuRestaurante.consumption[index]]) {
+       sumOrder += meuRestaurante.fetchMenu().food[meuRestaurante.consumption[index]];
+     } else if (meuRestaurante.fetchMenu().drinks[meuRestaurante.consumption[index]]) {
+       sumOrder += meuRestaurante.fetchMenu().drinks[meuRestaurante.consumption[index]];
+    }
+  }
+  total = sumOrder + (sumOrder * 10) / 100;
+  return total;
+    },
+    };
+    return meuRestaurante;
+  };
 // console.log(createMenu(menu));
 // // eslint-disable-next-line sonarjs/no-duplicate-string
 // console.log('---------------------------------');
@@ -75,6 +92,12 @@ return meuRestaurante;
 // console.log(createMenu(menu).consumption);
 // console.log('---------------------------------');
 // console.log(createMenu(menu).order('coxinha'));
+
+// const objetoRetornado = createMenu(menu);
+// console.log(objetoRetornado.order('coxinha',));
+// console.log(objetoRetornado.order('cerveja',));
+// console.log('-----------------');
+// console.log(objetoRetornado.pay());
 
 // Faça o item 5 no arquivo tests/restaurant.spec.js
 

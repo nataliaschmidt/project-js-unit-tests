@@ -36,7 +36,7 @@ const createMenu = require('../src/restaurant');
 
 describe('10 - Implemente a função `createMenu`, bem como seus casos de teste', () => {
   it('Verifica se a função `createMenu` tem o comportamento esperado', () => {
-    
+
     const meuRestaurante = {
       food: { coxinha: 3.90, sanduiche: 9.90 },
       drinks: { agua: 3.90, cerveja: 6.90 },
@@ -75,7 +75,7 @@ describe('10 - Implemente a função `createMenu`, bem como seus casos de teste'
     objetoRetornado.order('cerveja');
     expect(objetoRetornado.consumption).toEqual(['coxinha', 'cerveja']);
     // 8: Faça a implementação do item 8 do README no arquivo src/restaurant.js.
-    
+
     // 9: Verifique se, ao adicionar três pedidos em sequência, dentre bebidas e comidas, o array `objetoRetornado.consumption` contém os itens pedidos.
     objetoRetornado.order('sanduiche');
     expect(objetoRetornado.consumption).toEqual(['coxinha', 'cerveja', 'sanduiche']);
@@ -85,7 +85,7 @@ describe('10 - Implemente a função `createMenu`, bem como seus casos de teste'
     // 11: Verifique se, ao chamar `objetoRetornado.pay()`, retorna-se a soma dos preços de tudo que foi pedido, acrescido de 10%, conforme registrado em `objetoRetornado.consumption`.
     // 2 * 3.90 + 6.90 + 9.90 = 24.6 + 10%
 
-// expect(objetoRetornado.pay()).toBeCloseTo(27.06);
+    expect(objetoRetornado.pay()).toBeCloseTo(27.06);
 
     // 12: Faça a implementação do item 12 do README no arquivo src/restaurant.js.    
   });
