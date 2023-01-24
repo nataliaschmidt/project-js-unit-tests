@@ -50,15 +50,31 @@ const createMenu = (obj) => {
   const meuRestaurante = {
     fetchMenu: () => obj,
     consumption: [],
-  };
-  return meuRestaurante;
+    order: (string) => {
+      const food = Object.keys(meuRestaurante.fetchMenu().food);
+      console.log(food);
+      const containFood = food.some((contain) => contain === string);
+      // console.log(containFood);
+      const drinks = Object.keys(meuRestaurante.fetchMenu().drinks);
+      const containDrink = drinks.some((contain) => contain === string);
+      // console.log(containDrink);
+      if (containFood === true || containDrink === true) {
+            meuRestaurante.consumption.push(string);
+    return meuRestaurante.consumption;
+    } 
+      return 'Item indisponível';
+  },
 };
-
-console.log(createMenu(menu));
-console.log('---------------------------------');
-console.log(createMenu(menu).fetchMenu());
-console.log('---------------------------------');
-console.log(createMenu(menu).consumption);
+return meuRestaurante;
+};
+// console.log(createMenu(menu));
+// // eslint-disable-next-line sonarjs/no-duplicate-string
+// console.log('---------------------------------');
+// console.log(createMenu(menu).fetchMenu());
+// console.log('---------------------------------');
+// console.log(createMenu(menu).consumption);
+// console.log('---------------------------------');
+// console.log(createMenu(menu).order('coxinha'));
 
 // Faça o item 5 no arquivo tests/restaurant.spec.js
 
