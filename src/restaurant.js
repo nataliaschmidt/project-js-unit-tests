@@ -46,33 +46,38 @@ const meuRestaurante = {
   drinks: { agua: 3.90, cerveja: 6.90 },
 };
 
-  const createMenu = (obj) => {
-    let menu = {
-      fetchMenu: () => obj,
-    };
-    return menu;
+const createMenu = (obj) => {
+  let menu = {
+    fetchMenu: () => obj,
+    consumption: [],
+  };
+  return menu;
 };
 
-  console.log(createMenu(meuRestaurante).fetchMenu());
+console.log(createMenu(meuRestaurante));
+console.log('---------------------------------');
+console.log(createMenu(meuRestaurante).fetchMenu());
+console.log('---------------------------------');
+console.log(createMenu(meuRestaurante).consumption);
 
-  // Faça o item 5 no arquivo tests/restaurant.spec.js
+// Faça o item 5 no arquivo tests/restaurant.spec.js
 
-  // 6: Adicione ao objeto retornado por `createMenu()` uma chave de nome `consumption` que, como valor inicial, tem um array vazio.
+// 6: Adicione ao objeto retornado por `createMenu()` uma chave de nome `consumption` que, como valor inicial, tem um array vazio.
 
-  // Faça o item 7 no arquivo tests/restaurant.spec.js
+// Faça o item 7 no arquivo tests/restaurant.spec.js
 
-  // 8: Crie uma função, associada à chave 'order', que, ao receber uma string como parâmetro, adiciona essa string ao array da chave 'consumption'.
-  // - se a string existir nas chaves 'food' ou 'drink', deve ser adicionada ao array consumption
-  // - senão, deve exibir a mensagem "Item indisponível" e não adicionar nada ao array
-  // Ex: obj.order('coxinha') --> ['coxinha']
-  // Ex: obj.order('picanha') --> Exibe "Item indisponível"
+// 8: Crie uma função, associada à chave 'order', que, ao receber uma string como parâmetro, adiciona essa string ao array da chave 'consumption'.
+// - se a string existir nas chaves 'food' ou 'drink', deve ser adicionada ao array consumption
+// - senão, deve exibir a mensagem "Item indisponível" e não adicionar nada ao array
+// Ex: obj.order('coxinha') --> ['coxinha']
+// Ex: obj.order('picanha') --> Exibe "Item indisponível"
 
-  // Faça os ítens de 9 a 11 no arquivo tests/restaurant.spec.js
+// Faça os ítens de 9 a 11 no arquivo tests/restaurant.spec.js
 
-  // 12: Adicione ao objeto retornado por `createMenu()` uma chave `pay` armazenando uma função que:
-  // - percorrerá item a item de `objetoRetornado.consumption`;
-  // - fará a soma do preço desses itens;
-  // - retornará o valor somado acrescido de 10%.
-  // DICA: para isso, você precisará percorrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
+// 12: Adicione ao objeto retornado por `createMenu()` uma chave `pay` armazenando uma função que:
+// - percorrerá item a item de `objetoRetornado.consumption`;
+// - fará a soma do preço desses itens;
+// - retornará o valor somado acrescido de 10%.
+// DICA: para isso, você precisará percorrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-  module.exports = createMenu;
+module.exports = createMenu;

@@ -36,11 +36,12 @@ const createMenu = require('../src/restaurant');
 
 describe('10 - Implemente a função `createMenu`, bem como seus casos de teste', () => {
   it('Verifica se a função `createMenu` tem o comportamento esperado', () => {
+    
     const meuRestaurante = {
       food: { coxinha: 3.90, sanduiche: 9.90 },
       drinks: { agua: 3.90, cerveja: 6.90 },
     };
-    
+
     // 1: Verifique se função `createMenu()` retorna um objeto que possui a chave `fetchMenu`, a qual tem como valor uma função.
     expect(typeof createMenu(meuRestaurante)['fetchMenu']).toEqual('function')
 
@@ -48,17 +49,20 @@ describe('10 - Implemente a função `createMenu`, bem como seus casos de teste'
     // considerando que a função createMenu() foi chamada com o objeto: `{ food: {}, drink: {} }`.
     expect(createMenu({ food: {}, drink: {} }).fetchMenu()).toEqual({ food: {}, drink: {} })
     // 3: Verifique se o menu passado pra função createMenu() é idêntico ao menu recuperado pela função 'objetoRetornado.fetchMenu()'.
-expect(createMenu(meuRestaurante).fetchMenu()).toEqual({
-  food: { coxinha: 3.9, sanduiche: 9.9 },
-  drinks: { agua: 3.9, cerveja: 6.9 }
-})
+    expect(createMenu(meuRestaurante).fetchMenu()).toEqual({
+      food: { coxinha: 3.9, sanduiche: 9.9 },
+      drinks: { agua: 3.9, cerveja: 6.9 }
+    })
     // 4: Faça a implementação do item 4 do README no arquivo src/restaurant.js.
 
     // 5: Verifique se 'objetoRetornado.consumption', após a criação do menu, retorna um array vazio.
+    expect(createMenu(meuRestaurante).consumption).toEqual([])
 
     // 6: Faça a implementação do item 6 do README no arquivo src/restaurant.js.
-
+  });
     // 7: Verifique se, ao chamar uma função associada à chave `order` no objeto retornado, passando uma string como parâmetro
+    // fazer um novo it para a constante ter valor só aqui dentro
+
     // - se a string existir nas chaves 'food' ou 'drink', deve ser adicionada ao array consumption
     // - senão, deve exibir a mensagem "Item indisponível" e não adicionar nada ao array
     // Ex: obj.order('coxinha') --> ['coxinha']
@@ -74,5 +78,5 @@ expect(createMenu(meuRestaurante).fetchMenu()).toEqual({
 
     // 12: Faça a implementação do item 12 do README no arquivo src/restaurant.js.
 
-  });
+
 });
