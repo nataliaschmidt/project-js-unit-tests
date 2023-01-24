@@ -48,7 +48,10 @@ describe('10 - Implemente a função `createMenu`, bem como seus casos de teste'
     // considerando que a função createMenu() foi chamada com o objeto: `{ food: {}, drink: {} }`.
     expect(createMenu({ food: {}, drink: {} }).fetchMenu()).toEqual({ food: {}, drink: {} })
     // 3: Verifique se o menu passado pra função createMenu() é idêntico ao menu recuperado pela função 'objetoRetornado.fetchMenu()'.
-
+expect(createMenu(meuRestaurante).fetchMenu()).toEqual({
+  food: { coxinha: 3.9, sanduiche: 9.9 },
+  drinks: { agua: 3.9, cerveja: 6.9 }
+})
     // 4: Faça a implementação do item 4 do README no arquivo src/restaurant.js.
 
     // 5: Verifique se 'objetoRetornado.consumption', após a criação do menu, retorna um array vazio.
